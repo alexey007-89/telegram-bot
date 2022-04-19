@@ -48,7 +48,7 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
             if (textMessage.equals("/start")) {
                 String firstName = update.message().from().firstName();
                 telegramBot.execute(new SendMessage(chatId, "<b>Привет " + firstName + "!</b>\n" +
-                        "<i>Я бот для создания напоминаний. Отправь мне сообщение в формате <u>ДД.ММ.ГГГГ Моё напоминание</u> и я напомню тебе в нужное время.</i>").parseMode(ParseMode.HTML));
+                        "<i>Я бот для создания напоминаний. Отправь мне сообщение в формате <u>ДД.ММ.ГГГГ ЧЧ.ММ Моё напоминание</u> и я напомню тебе в нужное время.</i>").parseMode(ParseMode.HTML));
             }
             Pattern pattern = Pattern.compile("([0-9\\.\\:\\s]{16})(\\s)([\\W+]+)");
             Matcher matcher = pattern.matcher(textMessage);
