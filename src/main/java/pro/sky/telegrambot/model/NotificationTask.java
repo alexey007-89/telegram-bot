@@ -9,7 +9,7 @@ import java.util.Objects;
 public class NotificationTask {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
     @Column(name = "chat_id")
     private long chatId;
