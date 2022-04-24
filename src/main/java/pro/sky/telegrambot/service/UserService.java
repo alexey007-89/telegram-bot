@@ -24,7 +24,7 @@ public class UserService {
         if (userProperties != null) {
             logger.info("Getting User TZ for {}", userProperties);
             TimeZoneEngine engine = TimeZoneEngine.initialize();
-            return engine.query(userProperties.getLatitude(), userProperties.getLongitude()).orElseThrow();
+            return engine.query(userProperties.getLatitude(), userProperties.getLongitude()).orElse(ZoneId.of("UTC"));
         } else {
             return ZoneId.of("UTC");
         }
